@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  position: relative;
+}
+
+.blur-container {
+  width: 400px; /* Set the initial width of the container */
+  height: 400px; /* Set the initial height of the container */
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 20px;
+  position: relative;
+}
+
+.blur-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(1); /* Set the initial brightness of the image */
+  transition: filter 0.5s ease; /* Add a smooth transition effect to the filter property */
+}
+
+.image-info {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: calc(100% - 40px);
+  text-align: left;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  color: white;
+  font-family: 'Arial', sans-serif;
+}
+
+.title {
+  font-size: 24px; /* Set the initial font size for the title */
+  margin-bottom: 5px;
+}
+
+.tags {
+  font-size: 12px; /* Set the initial font size for the tags */
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.7); /* Set the initial color with some transparency for the tags */
+  margin-top: 5px;
+}
+
+/* On hover, adjust the appearance of the image and information */
+.blur-container:hover .blur-image {
+  filter: brightness(0.5) blur(5px); /* Darken the image and add a slight blur on hover */
+}
+
+.blur-container:hover .image-info {
+  opacity: 1; /* Make the information visible on hover */
+}
